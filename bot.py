@@ -6,7 +6,8 @@ bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    bot.send_message(message.from_user.id, f'Я маленький ботик. Приятно познакомиться, {message.from_user.first_name}')
+    bot.send_message(message.from_user.id, f"""Я маленький ботик. Приятно познакомиться, {message.from_user.first_name}
+Меня сделала Юля""")
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
