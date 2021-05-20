@@ -1,13 +1,15 @@
 import config
 import telebot
-from telebot import types # кнопки Telegram
+from telebot import types  # кнопки Telegram
 
 bot = telebot.TeleBot(config.token)
+
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     bot.send_message(message.from_user.id, f"""Я маленький ботик. Приятно познакомиться, {message.from_user.first_name}
 Меня сделала ЮляКА""")
+
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
@@ -15,6 +17,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, 'Привет!')
     else:
         bot.send_message(message.from_user.id, 'Не понимаю, что это значит.')
+
 
 bot.polling(none_stop=True)
 

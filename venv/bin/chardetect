@@ -1,4 +1,4 @@
-#!/home/july/Документы/Mybot/venv/bin/python
+#!/home/july/Mybot/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
